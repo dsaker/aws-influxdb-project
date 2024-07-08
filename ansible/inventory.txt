@@ -1,0 +1,9 @@
+[influxdb:vars]
+ansible_user=ubuntu
+ansible_private_key_file=/Users/dustysaker/influxdbkey/influxdb.pem
+ec2_public_ip=35.153.250.64
+
+[influxdb]
+ec2-35-153-250-64.compute-1.amazonaws.com
+
+

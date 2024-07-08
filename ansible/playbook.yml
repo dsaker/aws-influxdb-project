@@ -1,0 +1,17 @@
+- name: Install influxdb
+  hosts: all
+  become: True
+  gather_facts: yes
+  tags:
+    - influxdb
+  roles:
+    - role: influxdb
+
+- name: Install Caddy
+  hosts: all
+  become: True
+  gather_facts: yes
+  tags:
+    - caddy
+  roles:
+    - role: caddy
