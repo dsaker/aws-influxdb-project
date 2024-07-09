@@ -16,17 +16,17 @@
 - Run `cp terraform/terraform.tfvar.bak terraform/terraform.tfvars` and add your current ip address
   - This only allows you to ssh into your instance from you current ip. 
   - If you want to be able to ssh into the instance from anywhere change `cidr_blocks = ["${var.home_ip}/32"]` to `cidr_blocks = ["0.0.0.0/0"]` in terraform/main.tf
-- Install terraform if it is not already (https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- Install terraform (https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - Run `cd terraform` > `terraform apply`
 - This will output an eip and public_dns
 - Copy these values along with the key pair you created to ansible/inventory.txt
 
 ### Software and Sensor Setup
 
-- Install ansible if it is not already (https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+- Install ansible (https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - cd into the ansible directory
 - Run `ansible-playbook -i inventory playbook.yml`
-- Install Arduino IDE if not already (https://www.arduino.cc/en/software)
+- Install Arduino IDE (https://www.arduino.cc/en/software)
 - Open Influx UI at https://{{ ec2_public_ip }}.sslip.io
 - Create an admin user, project, and 'sensors' bucket 
   - Click on Arduino > Next > ESP8266 > Install necessary libraries in the Arduino IDE > Select 'sensors' bucket 
@@ -60,8 +60,9 @@
   ![img.png](images/img_6.png)
 
 - Clone the checks for each of your sensors
+- Send an alert email (https://docs.influxdata.com/influxdb/v2/monitor-alert/send-email/c)
 
-###  Setup a Dashboard (https://docs.influxdata.com/influxdb/v2/visualize-data/dashboards/create-dashboard/)
+###  Setup Dashboard (https://docs.influxdata.com/influxdb/v2/visualize-data/dashboards/create-dashboard/)
 
 - Configure each cell of the dashboard for a different table as below
 
