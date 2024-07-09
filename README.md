@@ -73,4 +73,4 @@
   
 ### License
 
-GNU General Public License version 3 (GPLv3).
+[MIT License](https://github.com/dsaker/aws-influxdb-project/blob/main/LICENSE)
